@@ -1,3 +1,38 @@
+module Pong_Top
+  #(parameter c_TOTAL_COLS=800,
+    parameter c_TOTAL_ROWS=525,
+    parameter c_ACTIVE_COLS=640,
+    parameter c_ACTIVE_ROWS=480)
+  (input            i_Clk,
+   input            i_HSync,
+   input            i_VSync,
+   // Game Start Button   
+   input            i_Game_Start,
+   // Player 1 and Player 2 Controls (Controls Paddles)
+   input            i_Paddle_Up_P1,
+   input            i_Paddle_Dn_P1,
+   input            i_Paddle_Up_P2,
+   input            i_Paddle_Dn_P2,
+   // Output Video
+   output reg       o_HSync,
+   output reg       o_VSync,
+   output [3:0] o_Red_Video,
+   output [3:0] o_Grn_Video,
+   output [3:0] o_Blu_Video);
+ 
+  // Local Constants to Determine Game Play
+  parameter c_GAME_WIDTH  = 40;
+  parameter c_GAME_HEIGHT = 30;
+  parameter c_SCORE_LIMIT = 9;
+  parameter c_PADDLE_HEIGHT = 6;
+  parameter c_PADDLE_COL_P1 = 0;  // Col Index of Paddle for P1
+  parameter c_PADDLE_COL_P2 = c_GAME_WIDTH-1; // Index for P2
+ 
+  // State machine enumerations
+  parameter IDLE    = 3'b000;
+  parameter RUNNING = 3'b001;
+  parameter P1_WINS = 3'b010;
+  parameter P2_WINS = 3'b011;
   parameter CLEANUP = 3'b100;
  
   reg [2:0] r_SM_Main = IDLE;
