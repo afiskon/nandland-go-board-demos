@@ -3,7 +3,6 @@
 ///////////////////////////////////////////////////////////////////////////
 module Project10_Pong_Top
   (input  i_Clk,       // Main Clock
-   input  i_UART_RX, // UART RX Data
  
    // Push BUttons
    input  i_Switch_1,
@@ -31,19 +30,14 @@ module Project10_Pong_Top
   parameter c_TOTAL_ROWS  = 525;
   parameter c_ACTIVE_COLS = 640;
   parameter c_ACTIVE_ROWS = 480;
+
+  assign w_RX_DV = 1; // start the game
      
   // Common VGA Signals
   wire [c_VIDEO_WIDTH-1:0] w_Red_Video_Pong, w_Red_Video_Porch;
   wire [c_VIDEO_WIDTH-1:0] w_Grn_Video_Pong, w_Grn_Video_Porch;
   wire [c_VIDEO_WIDTH-1:0] w_Blu_Video_Pong, w_Blu_Video_Porch;
    
-  // 25,000,000 / 115,200 = 217
-  UART_RX #(.CLKS_PER_BIT(217)) UART_RX_Inst
-  (.i_Clock(i_Clk),
-   .i_RX_Serial(i_UART_RX),
-   .o_RX_DV(w_RX_DV),
-   .o_RX_Byte());
-    
   // Generates Sync Pulses to run VGA
   VGA_Sync_Pulses #(.TOTAL_COLS(c_TOTAL_COLS),
                     .TOTAL_ROWS(c_TOTAL_ROWS),
