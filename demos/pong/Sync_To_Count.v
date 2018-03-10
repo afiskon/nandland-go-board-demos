@@ -1,3 +1,5 @@
+`default_nettype none
+
 // This module will take incoming horizontal and veritcal sync pulses and
 // create Row and Column counters based on these syncs.
 // It will align the Row/Col counters to the output Sync pulses.

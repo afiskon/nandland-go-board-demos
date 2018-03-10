@@ -1,5 +1,7 @@
+`default_nettype none
+
 ///////////////////////////////////////////////////////////////////////////////
-// File downloaded from <a class="vglnk" href="http://www.nandland.com" rel="nofollow"><span>http</span><span>://</span><span>www</span><span>.</span><span>nandland</span><span>.</span><span>com</span></a>
+// File downloaded from http://www.nandland.com
 ///////////////////////////////////////////////////////////////////////////////
 // This module is used to debounce any switch or button coming into the FPGA.
 // Does not allow the output of the switch to change unless the switch is

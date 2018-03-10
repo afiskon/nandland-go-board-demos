@@ -1,3 +1,5 @@
+`default_nettype none
+
 // The purpose of this module is to modify the input HSync and VSync signals to
 // include some time for what is called the Front and Back porch.  The front
 // and back porch of a VGA interface used to have more meaning when a monitor

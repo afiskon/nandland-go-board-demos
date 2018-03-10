@@ -1,3 +1,5 @@
+// `default_nettype none
+
 ///////////////////////////////////////////////////////////////////////////
 // File Downloaded From http://www.nandland.com
 ///////////////////////////////////////////////////////////////////////////
@@ -31,6 +33,7 @@ module Project10_Pong_Top
   parameter c_ACTIVE_COLS = 640;
   parameter c_ACTIVE_ROWS = 480;
 
+  wire w_RX_DV;
   assign w_RX_DV = 1; // start the game
      
   // Common VGA Signals

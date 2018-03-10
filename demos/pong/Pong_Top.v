@@ -1,3 +1,5 @@
+// `default_nettype none
+
 module Pong_Top
   #(parameter c_TOTAL_COLS=800,
     parameter c_TOTAL_ROWS=525,

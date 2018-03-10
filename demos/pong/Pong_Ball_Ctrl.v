@@ -1,3 +1,5 @@
+`default_nettype none
+
 module Pong_Ball_Ctrl 
   #(parameter c_GAME_WIDTH=40, 
     parameter c_GAME_HEIGHT=30) 

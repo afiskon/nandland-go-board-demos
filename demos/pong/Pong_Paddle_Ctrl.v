@@ -1,3 +1,5 @@
+`default_nettype none
+
 module Pong_Paddle_Ctrl
   #(parameter c_PLAYER_PADDLE_X=0,
     parameter c_PADDLE_HEIGHT=6,
